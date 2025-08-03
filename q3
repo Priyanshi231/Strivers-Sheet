@@ -1,0 +1,24 @@
+class Solution {
+public:
+    bool isPalindrome(int num) {
+        int x = num;
+        int ans = 0;
+        while(x != 0){
+            int dig = x % 10;
+            if(ans > INT_MAX/10 || ans < INT_MIN/10){
+                return 0;
+            }
+            ans = (ans*10)+ dig;
+            x = x/10;
+        }
+        if(num < 0 ){
+            return false;
+        }
+        if(ans == num){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+};
