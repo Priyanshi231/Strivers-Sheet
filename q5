@@ -1,0 +1,21 @@
+class Solution {
+public:
+    bool isArmstrong(int n) {
+        int num = n;
+        vector<int>ans;
+        int res = 0;
+        while(n!=0){
+            int dig = n%10;
+            n = n/10;
+            ans.push_back(dig);
+        }
+        for(int i=0; i<ans.size(); i++){
+             res = res + (pow(ans[i],ans.size()));
+        }
+        if(res == num){
+            return true;
+        }else{
+            return false;
+        }
+    }
+};
