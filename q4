@@ -1,0 +1,30 @@
+class Solution {
+public:
+    int GCD(int n1,int n2) {
+        vector<int> div1;
+        vector<int> div2;
+
+        vector<int> ans;
+        int gcd = 0;
+        for(int i=1; i<=n1; i++){
+            if(n1 % i == 0){
+                div1.push_back(i);
+            }
+        }
+        for(int i=1; i<=n2; i++){
+            if(n2 % i == 0){
+                div2.push_back(i);
+            }
+        }
+        int size = max(div1.size(),div2.size());
+        for(int i=0; i<size; i++){
+            if(div1[i] == div2[i]){
+                ans.push_back(div1[i]);
+            }
+        }
+        for(int i=0; i<ans.size(); i++){
+            gcd = max(ans[i-1],ans[i]);
+        }
+        return gcd;
+    }
+};
