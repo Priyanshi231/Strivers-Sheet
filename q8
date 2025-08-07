@@ -1,0 +1,11 @@
+class Solution {
+  public:
+    int d = 1;
+    void printNumbers(int n) {
+        // Your code goes here
+        if(d > n) return;
+        cout<< d << endl;
+        d++;
+        printNumbers(n);
+    }
+};
