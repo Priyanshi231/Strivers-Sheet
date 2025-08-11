@@ -1,0 +1,15 @@
+class Solution{	
+	public:		
+        bool helper(string& s,int st, int end){
+            if(st >= end) return true;
+
+            if(s[st] != s[end]) return false;
+
+            return helper(s, st+1, end-1);
+        }
+		bool palindromeCheck(string& s){
+			//your code goes here
+            return helper(s, 0 , s.size()-1);
+            
+		}
+};
